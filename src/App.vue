@@ -5,7 +5,8 @@
     <!--这里是APP-->
 
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <Home></Home>
+    <!--<Home></Home>-->
+    <router-view></router-view>
   </div>
 </template>
 

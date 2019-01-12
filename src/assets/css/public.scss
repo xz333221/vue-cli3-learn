@@ -1,15 +1,76 @@
 *{
   margin: 0;
   padding: 0;
+
 }
-.public-flex-center{
+@mixin public-flex-center{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.public-flex-col{
+
+@mixin public-flex-col{
   flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@mixin public-flex-row{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin transform-rotate($value:90deg){
+  transform:rotate($value);
+  -ms-transform:rotate($value); 	/* IE 9 */
+  -moz-transform:rotate($value); 	/* Firefox */
+  -webkit-transform:rotate($value); /* Safari 和 Chrome */
+  -o-transform:rotate($value); 	/* Opera */
+}
+
+.public-flex-center{
+  @include public-flex-center;
+}
+
+.public-flex-col{
+  @include public-flex-col;
+}
+.public-flex-row{
+  @include public-flex-row;
+}
+.navbtn{
+  transition: 1s!important;
+  width: 30px;
+  height: 30px;
+  background: bisque;
+  @include public-flex-col;
+  justify-content: space-between;
+  z-index: 999;
+  position: absolute;
+  margin: 10px;
+  box-sizing: border-box;
+  padding: 6px 0;
+  border-radius: 2px;
+}
+.nav-bar{
+  width: 24px;
+  height: 4px;
+  background: #666;
+  border-radius: 2px;
+}
+.width-none{
+  //display: none;
+  width: 0!important;
+  background: transparent!important;
+  transition: 1s!important;
+  font-size: 0!important;
+  color: transparent!important;
+}
+.width-100{
+  width: 100%!important;
+}
+.transform-rotate{
+  transition: 1s!important;
+  @include transform-rotate(-90deg);
 }

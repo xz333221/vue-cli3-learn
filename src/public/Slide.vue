@@ -1,6 +1,6 @@
 <template>
   <div class="slide public-flex-col">
-    <div class="btn public-flex-center" v-for="(item,index) in nav" @click="to_nav(index)">
+    <div class="nav-btn public-flex-center" v-for="(item,index) in nav" @click="to_nav(index)">
       {{item}}
     </div>
     <!--npm install vue-router-->
@@ -12,7 +12,7 @@
     name: "Slide",
     data() {
       return {
-        nav: ['导航1', '导航2', '导航3', '导航4']
+        nav: ['相关配置', '导航2', '导航3', '导航4']
       }
     },
     methods:{
@@ -30,6 +30,7 @@
 
 <style scoped>
   .slide {
+    transition: 1s!important;
     width: 15%;
     position: fixed;
     left: 0;
@@ -38,7 +39,8 @@
     background: chartreuse;
   }
 
-  .btn {
+  .nav-btn {
+    transition: 1s!important;
     width: 60%;
     height: 20%;
     background: darksalmon;
